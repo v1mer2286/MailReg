@@ -7,6 +7,75 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GroupBox Grid.Column="0" Header="Созданные почты" Margin="20">
+            <Border BorderThickness="0.5" BorderBrush="Black">
+                <TextBlock Margin="10" Background="Azure"></TextBlock>
+            </Border>
+        </GroupBox>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Margin="20" Header="Proxy">
+                <Canvas>
+                    <TextBlock Canvas.Top="30" Canvas.Right="100" TextWrapping="Wrap" FontSize="14">Кол-во строк:</TextBlock>
+                    <Border BorderThickness="0.5" BorderBrush="Black" Canvas.Top="30" Canvas.Right="10">
+                        <TextBlock x:Name="ProxyValue" Background="Azure" Width="80" Height="20"></TextBlock>
+                    </Border>
+                    <TextBlock TextWrapping="Wrap" Canvas.Top="33" FontSize="10">Путь к файлу прокси</TextBlock>
+                    <Button x:Name="ExlorerProxy" Canvas.Top="30" Canvas.Left="105" Content="Обзор" Background="Azure">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <StackPanel Orientation="Horizontal" Canvas.Bottom="70">
+                        <RadioButton x:Name="HTTP" Width="80">HTTP</RadioButton>
+                        <RadioButton x:Name="Socks5" Width="80">Socks5</RadioButton>
+                        <RadioButton x:Name="Socks4" Width="65">Socks4</RadioButton>
+                        <Button x:Name="Proxy" Content="Проверить прокси" Background="Azure">
+                            <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock Canvas.Bottom="20" Canvas.Left="10">Рабочие прокси:</TextBlock>
+                    <TextBlock x:Name="ValidProxyValue" Canvas.Bottom="20" Canvas.Left="110"></TextBlock>
+                    <Button x:Name="DownloadValidProxy" Content="Скачать рабочие прокси" Canvas.Bottom="20" Canvas.Right="15" Background="Azure">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Canvas>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Margin="20,0,20,30" Header="CreateMail">
+                <Canvas>
+                    <TextBlock Canvas.Top="20" Canvas.Left="10">Путь к файлу прокси</TextBlock>
+                    <Button x:Name="AutoExplorer" Content="Обзор" Canvas.Top="20" Canvas.Left="130" Background="Azure">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="5"></Setter>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <TextBlock Canvas.Top="20" Canvas.Right="50">Количество аккаунтов:</TextBlock>
+                    <Border BorderThickness="0.5" BorderBrush="Black" Canvas.Top="20" Canvas.Right="10">
+                        <TextBox Background="Azure" Width="50" x:Name="MailValue"></TextBox>
+                    </Border>
+                    
+                    
+                </Canvas>
+            </GroupBox>
+        </Grid>
     </Grid>
 </Window>
